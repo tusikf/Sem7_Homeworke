@@ -6,35 +6,42 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-// int[,] massive = new double[3,4];
 
-// PrintArray(massive);
+Console.Write("Введите количество строк: ");
+int row = int.Parse(Console.ReadLine()!);
 
-// void PrintArray(int[,] mass)
-// {
-//     for (int i=0; i < mass.GetLength(0); i++)
-//     {
-//         for (int j=0; j < mass.GetLendth(1); j++)
-//         {
-//             Console.Write($"{mass[ i , j ]}");
-//         }
-//         Console.WriteLine();
-//     }
-// }
+Console.Write("Введите количество столбцов: ");
+int colom = int.Parse(Console.ReadLine()!);
 
-// Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
+double[,] massive = new double[row,colom];
 
-double number = 5;
-double firstElem = 0;
-double secondElem = 1;
+PrintArray(massive);
 
-Console.WriteLine($"1. {firstElem}");
-Console.WriteLine($"2. {secondElem}");
+FillArray(massive);
 
-for (int i = 3; i <= number; i++)
+Console.WriteLine();
+PrintArray(massive);
+
+void PrintArray(double[,] mass)
 {
-    double nextElem = firstElem + secondElem;
-    Console.WriteLine($"{i}. {nextElem}");
-    firstElem = secondElem;
-    secondElem = nextElem;
+    for (int i=0; i < mass.GetLength(0); i++)
+    {
+        for (int j=0; j < mass.GetLength(1); j++)
+        {
+            Console.Write($"{mass[ i , j ] }  ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+void FillArray(double[,] mass)
+{
+    for (int i=0; i < mass.GetLength(0); i++)
+    {
+        for (int j=0; j < mass.GetLength(1); j++)
+        {
+            mass[i,j] = new Random().Next(-10,11);
+        }
+    }
 }
