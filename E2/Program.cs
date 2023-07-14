@@ -7,17 +7,17 @@
 // i = 1, j = 2 -> 2
 // i = 4, j = 2 -> такого элемента не существует
 
-int rows = new Random().Next(2,11);
-int coloms = new Random().Next(2,11);
+int rows = new Random().Next(2,5);
+int coloms = new Random().Next(2,5);
 
-Console.Write("Введите позиции элемента, который хотите увидеть из массива: ");
+Console.WriteLine("Введите позиции элемента, который хотите увидеть из массива: ");
 int r = int.Parse(Console.ReadLine()!);
 int c = int.Parse(Console.ReadLine()!);
 
 int[,] massive = new int[rows,coloms];
 FillArray(massive);
 
-Console.Write("Исходный массив: ");
+Console.WriteLine("Исходный массив: ");
 PrintArray(massive);
 Console.WriteLine();
 
@@ -36,7 +36,7 @@ void FindEl(int[,] mass, int rr, int cc)
     {
         for (int j=0; j < mass.GetLength(1); j++)
         {
-            if (i==rr && j==cc) 
+            if (i==rr-1 && j==cc-1) 
             {
                 Console.Write($"Искомый элемент массива это: {mass[ i , j ] }  ");
             }
