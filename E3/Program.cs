@@ -34,7 +34,7 @@ void FindeSra(int[,] mass)
         {
             summ += mass[i,j];         
         }
-        sra = summ / mass.GetLength(0);
+        sra = (double) summ / mass.GetLength(0);
         Console.WriteLine($"Столбца № {j+1} = {sra:0.000} ");
         summ = 0;
         sra = 0;
